@@ -2,6 +2,10 @@
 
 A Progressive Web App (PWA) for tracking bin collection dates at **19 Rotherley Gardens, Winchester, SO22 6TN**.
 
+## 🌐 Live App
+
+**[https://enterthevortex2.github.io/bin-collection-app/](https://enterthevortex2.github.io/bin-collection-app/)**
+
 ## Features
 
 - 📅 Dashboard showing upcoming collections per bin type

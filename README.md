@@ -44,7 +44,7 @@ Reminders are sent at **7pm the evening before** each collection day.
 
 ## Tech Stack
 
-- **React 18** + **TypeScript** — UI framework
+- **React 19** + **TypeScript** — UI framework
 - **Vite** — Build tool
 - **vite-plugin-pwa** — PWA generation (manifest + service worker)
 - **date-fns** — Date manipulation

@@ -10,7 +10,7 @@ import { format } from 'date-fns';
 export const Dashboard: React.FC = () => {
   const { isCollected, markCollected, unmarkCollected } = useCollections();
   const { isIOS, isInstalled, notificationPermission, requestPermission } = useNotifications();
-  const [iosbannerDismissed, setIosbannerDismissed] = useState(false);
+  const [iosBannerDismissed, setIosBannerDismissed] = useState(false);
 
   const today = new Date();
   const todayCollections = getTodayCollections();
@@ -19,7 +19,7 @@ export const Dashboard: React.FC = () => {
   const todayBinLabels = todayCollections.map(c => BIN_CONFIGS.find(b => b.id === c.binType)?.label ?? '');
   const tomorrowBinLabels = tomorrowCollections.map(c => BIN_CONFIGS.find(b => b.id === c.binType)?.label ?? '');
 
-  const showIOSBanner = isIOS && !isInstalled && !iosbannerDismissed;
+  const showIOSBanner = isIOS && !isInstalled && !iosBannerDismissed;
 
   const handleRequestPermission = () => {
     requestPermission();
@@ -34,7 +34,7 @@ export const Dashboard: React.FC = () => {
       </div>
 
       {showIOSBanner && (
-        <IOSInstallBanner onDismiss={() => setIosbannerDismissed(true)} />
+        <IOSInstallBanner onDismiss={() => setIosBannerDismissed(true)} />
       )}
 
       {!showIOSBanner && isIOS && isInstalled && notificationPermission === 'default' && (

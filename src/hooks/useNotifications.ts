@@ -10,7 +10,7 @@ interface UseNotificationsReturn {
 }
 
 function isIOSDevice(): boolean {
-  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as unknown as { MSStream: unknown }).MSStream;
+  return /iPad|iPhone|iPod/.test(navigator.userAgent);
 }
 
 function isInstalledPWA(): boolean {

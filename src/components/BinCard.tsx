@@ -1,6 +1,6 @@
 import React from 'react';
 import { BinConfig, CollectionDate } from '../data/schedule';
-import { formatDateLabel, formatFullDate } from '../utils/dates';
+import { formatDateLabel, formatFullDate, isTomorrowDate } from '../utils/dates';
 
 interface BinCardProps {
   config: BinConfig;
@@ -18,9 +18,7 @@ export const BinCard: React.FC<BinCardProps> = ({
   onUnmark,
 }) => {
   const isToday = nextCollection ? new Date().toDateString() === nextCollection.date.toDateString() : false;
-  const isTomorrow = nextCollection
-    ? (() => { const t = new Date(); t.setDate(t.getDate() + 1); return t.toDateString() === nextCollection.date.toDateString(); })()
-    : false;
+  const isTomorrow = nextCollection ? isTomorrowDate(nextCollection.date) : false;
 
   return (
     <div

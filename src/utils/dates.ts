@@ -44,6 +44,10 @@ export function getTodayCollections(): CollectionDate[] {
   return getCollectionsForDate(new Date());
 }
 
+export function isTomorrowDate(date: Date): boolean {
+  return isTomorrow(date);
+}
+
 export function getTomorrowCollections(): CollectionDate[] {
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
